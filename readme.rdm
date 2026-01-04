@@ -1,0 +1,64 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{left=1cm, right=1cm, top=1cm, bottom=1cm}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Large JAIKI SHARMA}\\
+    \vspace{2mm}
+    +91 7379185718 $\cdot$ Kushinagar, Uttar Pradesh $\cdot$ \href{mailto:jack912062sharmas@gmail.com}{jack912062sharmas@gmail.com} $\cdot$ \href{https://www.linkedin.com/in/jaiki-sharma-a875a1384/}{linkedin.com/in/jaiki-sharma}$\cdot$ \href{https://github.com/jaikisharma73}{github.com/in/jaiki-sharma}
+\end{center}
+
+\section*{Objective}
+Motivated Full Stack Developer with strong knowledge of front-end and back-end technologies, seeking an opportunity to build scalable, high-performance web applications and contribute to organizational growth.
+
+\section*{Education}
+\textbf{Bachelor of Technology in Computer Science Engineering}:        Monad University, Hapur \hfill \emph{Expected 2027} \\
+\textbf{CGPA:} 8.8 (Till 5th Semester) \\
+Data Structures and Algorithms, Operating Systems, DBMS, Computer Networks, Object-Oriented Programming, Web Development
+
+% \vspace{2mm}
+% \textbf{Intermediate (Class 12)}, Anjuman Vidyalaya \hfill \emph{Year of Passing: 2023} \\
+% \textbf{Percentage:} 75\%
+
+% \vspace{2mm}
+% \textbf{High School (Class 10)}, Anjuman Vidyalaya \hfill \emph{Year of Passing: 2021} \\
+% \textbf{Percentage:} 83\%
+
+\section*{Skills}
+\begin{tabular}{l l}
+Programming Languages: & JavaScript , C++ , Python \\
+Web Technologies: & HTML ,CSS ,Tailwind CSS , ReactJS, Node Js, Express Js , Bootstrap \\
+DataBase: & MongoDB, MySQL \\
+Tools and Plateform: & Git, GitHub, VS Code, Postman ,Netlify, Vercel, Wordpress, Shopify \\
+Soft Skills: &Problem Solving, Communication, Teamwork, Adaptability \\
+\end{tabular}
+
+\section*{Projects}
+\textbf{JACMOV – Movie Ticket Booking App}: \\
+Developed a movie booking web application using TMDB API for movie data, RESTful APIs for backend operations, Stripe for secure payments, Clerk for authentication, Tailwind CSS for UI, and deployed on Vercel.\\
+Link : \href{https://jackmoviess-fq0rrxwar-jaiki-sharmas-projects.vercel.app/}{JacMov}
+ \\\\
+ \textbf{GenZ AI – AI Component Generator}: \\
+Developed a React-based AI tool that generates complete UI components from natural language prompts.
+Integrated Google Gemini API to dynamically create production-ready HTML code using selected frameworks.
+Implemented a Monaco code editor with live code view, preview toggling, and loading/error handling.
+Designed a modern, responsive interface using Tailwind CSS with seamless UX and real-time feedback.\\
+Link : \href{https://jackmoviess-fq0rrxwar-jaiki-sharmas-projects.vercel.app/}{JacMov}
+ \\\\
+\textbf{Personal Portfolio}: \\
+ Designed and developed a personal portfolio website to showcase projects and skills.
+Deployed using Netlify.\\
+Link : \href{https://portfoliojaikis.netlify.app/}{Porfolio}
+ \\
+
+
+\section*{Certification and Internship}
+\begin{itemize}
+    \item Full Stack Development -- Apna College
+    \item Data Structure And Algorithm -- Apna College
+\end{itemize}
+
+\end{document}
