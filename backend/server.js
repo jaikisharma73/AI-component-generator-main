@@ -6,14 +6,28 @@ import { GoogleGenAI } from "@google/genai";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+
+// ✅ CORS configuration for production + local
+app.use(
+  cors({
+    origin: [
+      "https://vercel-frontend-ivory.vercel.app", // your deployed frontend
+      "http://localhost:5173", // local dev frontend
+    ],
+    methods: ["GET", "POST", "OPTIONS"],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
+// ✅ Check GEMINI_API_KEY
 if (!process.env.GEMINI_API_KEY) {
   console.error("❌ GEMINI_API_KEY missing");
   process.exit(1);
 }
 
+// ✅ Initialize Gemini client
 const genAI = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
 });
@@ -42,37 +56,34 @@ ${prompt}
     async function callGemini(model) {
       return await genAI.models.generateContent({
         model,
-        contents: [
-          { role: "user", parts: [{ text: fullPrompt }] }
-        ],
+        contents: [{ role: "user", parts: [{ text: fullPrompt }] }],
       });
     }
 
     let response;
 
     try {
-      // fast model
-      response = await callGemini("gemini-2.5-flash");
+      // ✅ Try Flash first
+      response = await callGemini("models/gemini-2.5-flash");
     } catch (e) {
       console.log("⚠ Flash overloaded → switching to Pro");
-      response = await callGemini("gemini-2.5-pro");
+      response = await callGemini("models/gemini-2.5-pro");
     }
 
-    const result =
-      response.candidates?.[0]?.content?.parts?.[0]?.text || "";
+    const result = response?.candidates?.[0]?.content?.parts?.[0]?.text || "";
 
     if (!result) {
       return res.status(500).json({ error: "No output from Gemini" });
     }
 
     res.json({ result });
-
   } catch (error) {
     console.error("🔥 Gemini Error:", error.message || error);
     res.status(500).json({ error: "AI service temporarily unavailable" });
   }
 });
 
+// ✅ Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`✅ Backend running on port ${PORT}`);
